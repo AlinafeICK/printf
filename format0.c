@@ -9,8 +9,7 @@ int _string(char *str)
 {
 	int length = strlen(str);
 
-	write(1, str, length);
-	return (0);
+	return (write(1, str, length));
 }
 
 /**
@@ -20,8 +19,7 @@ int _string(char *str)
  */
 int _putchar(char c)
 {
-	write(1, &c, 1);
-	return (0);
+	return (write(1, &c, 1));
 }
 
 /**
@@ -34,7 +32,6 @@ int _printf(const char *format, ...)
 {
 	int every_char = 0;/*goes through every string*/
 	char c;
-	char *str;
 	va_list arguments;/*initializing the heap for arg*/
 
 	if (*format == '\0')
@@ -44,8 +41,7 @@ int _printf(const char *format, ...)
 	{
 		if (*format != '%')
 		{
-			write(1, format, 1);
-			every_char++;
+			every_char += _putchar(*format);
 		}
 		else
 		{
@@ -62,9 +58,12 @@ int _printf(const char *format, ...)
 					every_char += _putchar('%');
 					break;
 				case 's':
-					str = va_arg(arguments, char *);
-
-					_string(str);
+					every_char += _string(va_arg(arguments, char *));
+					break;
+				default:
+					every_char += _putchar('%');
+					every_char += _putchar(*format);
+					break;
 			}
 		}
 		format++;
@@ -78,9 +77,11 @@ int _printf(const char *format, ...)
  */
 int main(void)
 {
-	_printf("This is my first project\n");
-	_printf("%c %c %c \n", 'A', 'L', 'x');
-	_printf("%s\n", "naeemah my niece at 2ys 9months");
-	_printf("this is the %% sign\n");
+	int print_char;
+
+	print_char = _printf("This is my first project\n");
+	print_char += _printf("%c %c %c \n", 'A', 'L', 'x');
+	print_char += _printf("%s\n", "naeemah my niece at 2ys 9months");
+	print_char += _printf("this is the %% sign\n");
 	return (0);
 }
