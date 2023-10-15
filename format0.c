@@ -1,6 +1,30 @@
 #include "main.h"
 #include <stddef.h>
 /**
+ * _string - this function print the string
+ * @str: the string
+ * Return: the string
+ */
+int _string(char *str)
+{
+	int length = strlen(str);
+
+	write(1, str, length);
+	return (0);
+}
+
+/**
+ * _putchar - printing a letter
+ * @c:the character
+ * Return: value
+ */
+int _putchar(char c)
+{
+	write(1, &c, 1);
+	return (0);
+}
+
+/**
  * _printf - this function produces output according to its format
  * @format: the pointer to the first argument
  * @...: the rest of the argument
@@ -9,14 +33,12 @@
 int _printf(const char *format, ...)
 {
 	int every_char = 0;/*goes through every string*/
-
+	char c;
+	char *str;
 	va_list arguments;/*initializing the heap for arg*/
 
 	if (*format == '\0')
-	{
 		return (-1);
-	}
-
 	va_start(arguments, format);
 	while (*format)
 	{
@@ -29,25 +51,20 @@ int _printf(const char *format, ...)
 		{
 			format++;
 			if (*format == '\0')
-			       	break;
-			if (*format == 'c')
+				break;
+			switch (*format)
 			{
-				char c = va_arg(arguments, int);
+				case 'c':
+					c = va_arg(arguments, int);
+					every_char += _putchar(c);
+					break;
+				case '%':
+					every_char += _putchar('%');
+					break;
+				case 's':
+					str = va_arg(arguments, char *);
 
-				write(1, &c, 1);
-			}
-			else if (*format == '%')
-			{
-				write(1, format, 1);
-				every_char++;
-			}
-			else if (*format == 's')
-			{
-				char *str = va_arg(arguments, char *);
-				int length = strlen(str);
-
-				write(1, str, length);
-				every_char = length;
+					_string(str);
 			}
 		}
 		format++;
