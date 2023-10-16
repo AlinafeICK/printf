@@ -1,28 +1,6 @@
 #include "main.h"
 #include <stddef.h>
 /**
- * _string - this function print the string
- * @str: the string
- * Return: the string
- */
-int _string(char *str)
-{
-	int length = strlen(str);
-
-	return (write(1, str, length));
-}
-
-/**
- * _putchar - printing a letter
- * @c:the character
- * Return: value
- */
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
-}
-
-/**
  * _printf - this function produces output according to its format
  * @format: the pointer to the first argument
  * @...: the rest of the argument
