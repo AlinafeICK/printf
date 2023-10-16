@@ -5,8 +5,9 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <stddef.h>
+
 int _printf(const char *format, ...);
 int _putchar(char c);
 int _string(char *str);
 
-#endif
+#endif /*_MAIN_H_*/
