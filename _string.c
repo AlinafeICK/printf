@@ -8,5 +8,5 @@ int _string(char *str)
 {
 	size_t length = strlen(str);
 
-	return (int)write(1, str, length);
+	return (write(1, str, length));
 }
