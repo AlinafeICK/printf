@@ -71,17 +71,3 @@ int _printf(const char *format, ...)
 	va_end(arguments);
 	return (every_char);
 }
-/**
- * main - checking if the code works
- * Return: always o success
- */
-int main(void)
-{
-	int print_char;
-
-	print_char = _printf("This is my first project\n");
-	print_char += _printf("%c %c %c \n", 'A', 'L', 'x');
-	print_char += _printf("%s\n", "naeemah my niece at 2ys 9months");
-	print_char += _printf("this is the %% sign\n");
-	return (0);
-}
