@@ -6,7 +6,7 @@
  */
 int _string(char *str)
 {
-	int length = strlen(str);
+	size_t length = strlen(str);
 
-	return (write(1, str, length));
+	return (int)write(1, str, length);
 }
