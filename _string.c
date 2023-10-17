@@ -1,12 +1,30 @@
 #include "main.h"
 /**
  * _string - Function that prints strings
- * @str: pointer argument
+ * @va_list: the list of arguments
+ * @argument: the name of the list
  * Return: Strings
  */
-int _string(char *str)
+int _string(va_list argument)
 {
-	size_t length = strlen(str);
+	char *str;
+	int length = 0;
+	int i;
 
-	return (write(1, str, length));
+	str = va_arg(argument, char *);
+
+	if (*str == NULL)
+	{
+		return (1);
+	}
+	else
+	{
+		for (i = 0; s[i] != '\0'; i++)
+		{
+			_putchar (str[i]);
+			length++;
+		}
+		return (length);
+	}
+
 }
