@@ -19,7 +19,7 @@ int _print_int(va_list argument)
 	}
 	if (n / 10)
 	{
-		counter += _print_int(n / 10);
+		counter += _print_int(argument);
 	}
 	counter += _putchar(n % 10 + '0');
 	return (counter);
