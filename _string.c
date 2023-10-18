@@ -13,13 +13,13 @@ int _string(va_list argument)
 
 	str = va_arg(argument, char *);
 
-	if (*str == NULL)
+	if (str == NULL)
 	{
-		return (1);
+		return (0);/*this indicates no charcters printed*/
 	}
 	else
 	{
-		for (i = 0; s[i] != '\0'; i++)
+		for (i = 0; str[i] != '\0'; i++)
 		{
 			_putchar (str[i]);
 			length++;

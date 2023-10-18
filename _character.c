@@ -7,7 +7,7 @@
  */
 int _character(va_list argument)
 {
-	char x = va_arg(argument, int);
+	int x = va_arg(argument, int);
 
 	return (_putchar (x));
 }

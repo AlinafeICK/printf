@@ -14,6 +14,7 @@ int _printf(const char *format, ...)
 	find specifier[] ={
 		{'c', _character},
 		{'s', _string},
+		{'%', modulus},
 		{0, NULL}
 	};
 
@@ -27,7 +28,7 @@ int _printf(const char *format, ...)
 			count_char++;/*counts the character as it progresses*/
 		}
 		else
-		{
+		 {
 			format++;/*move past the %*/
 			int specifier_find = 0;
 
@@ -44,7 +45,7 @@ int _printf(const char *format, ...)
 			{
 				_putchar ('%');
 				_putchar (*format);
-				count_cahr += 2;
+				count_char += 2;
 			}
 		}
 		format++;
