@@ -6,8 +6,10 @@
  * @n: integer argument
  * Return: Negative or positive integers
  */
-int _print_int(int n)
+int _print_int(va_list argument)
 {
+	int n = va_arg(argument, int);
+
 	int counter = 0;
 
 	if (n < 0)
