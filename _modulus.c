@@ -3,7 +3,7 @@
  * modulus - this function prints the percentage sign
  * Return: value
  */
-int modulus(void)
+int _modulus(void)
 {
 	_putchar ('%');
 	return (1);

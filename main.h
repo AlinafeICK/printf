@@ -17,8 +17,8 @@ typedef struct/*the structure we will iterate through*/
 }find;
 int _putchar(char c);
 int _printf(const char *format, ...);
-int _string(char *str);
-int _print_int(int n);
+int _string(va_list argument);
+int _print_int(va_list argument);
 int _modulus(void);
 
 #endif /*_MAIN_H_*/
