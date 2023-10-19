@@ -17,7 +17,8 @@ typedef struct/*the structure we will iterate through*/
 int _putchar(char c);
 int _printf(const char *format, ...);
 int _string(va_list argument);
-int _print_Int(va_list argument);
+int _print_int(va_list argument);
+int _print_dec(va_list argument);
 int _character(va_list argument);
 int _modulus(void);
 
