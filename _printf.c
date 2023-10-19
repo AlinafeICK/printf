@@ -9,7 +9,7 @@ int _printf(const char *format, ...)
 {
 	int i;
 	va_list argument;
-	find specifier[] ={
+	find specifier[] = {
 		{'c', _character},
 		{'s', _string},
 		{'%', _modulus},
@@ -19,6 +19,7 @@ int _printf(const char *format, ...)
 	};
 	int count_char;
 	int specifier_find;
+
 	va_start(argument, format);
 	count_char = 0;
 
@@ -34,7 +35,7 @@ int _printf(const char *format, ...)
 			format++;/*move past the %*/
 			specifier_find = 0;
 
-			for (i = 0; specifier[i].specifier!= 0; i++)/*iterate through the array of function specifiers*/
+			for (i = 0; specifier[i].specifier != 0; i++)/*iterate through the array of function specifiers*/
 			{
 				if (specifier[i].specifier == *format)
 				{

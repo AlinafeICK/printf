@@ -11,16 +11,28 @@ int _print_int(va_list argument)
 	int n = va_arg(argument, int);
 
 	int counter = 0;
+	int num;
 
 	if (n < 0)
 	{
 		counter += _putchar('-');
 		n = -n;
 	}
-	if (n / 10)
+	num = 0;
+
+	do
 	{
-		counter += _print_int(argument);
+		num /= 10;
+		counter++;
 	}
-	counter += _putchar(n % 10 + '0');
+	while (num != 0);
+	do
+	{
+		num = n % 10;
+		counter += _putchar (num + '0');;
+		n /= 10;
+	}
+	while (n != 0);
+
 	return (counter);
 }
