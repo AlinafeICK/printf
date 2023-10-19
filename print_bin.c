@@ -13,6 +13,7 @@ int _print_bin(va_list argument)
 
 	if (n == 0)
 	{
+		_putchar ('0');
 		return (1);
 	}
 	count = 0;
