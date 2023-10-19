@@ -13,8 +13,8 @@ int _printf(const char *format, ...)
 		{'c', _character},
 		{'s', _string},
 		{'%', _modulus},
-		{'d', _print_int},
-		{'i', _print_int},
+		{'d', _print_Int},
+		{'i', _print_Int},
 		{0, NULL}
 	};
 	int count_char;
