@@ -21,5 +21,6 @@ int _print_int(va_list argument);
 int _print_dec(va_list argument);
 int _character(va_list argument);
 int _modulus(void);
+int _print_bin(va_list argument);
 
 #endif /*_MAIN_H_*/

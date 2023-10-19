@@ -15,6 +15,7 @@ int _printf(const char *format, ...)
 		{'%', _modulus},
 		{'d', _print_int},
 		{'i', _print_dec},
+		{'b', _print_bin},
 		{0, NULL}
 	};
 	int count_char;
