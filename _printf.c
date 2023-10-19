@@ -9,14 +9,7 @@ int _printf(const char *format, ...)
 {
 	int i;
 	va_list argument;
-	find specifier[] = {
-		{'c', _character},
-		{'s', _string},
-		{'%', _modulus},
-		{'d', _print_int},
-		{'i', _print_dec},
-		{'b', _print_bin},
-		{0, NULL}
+	find specifier[] = {{'c', _character},{'s', _string},{'%', _modulus},{'d', _print_int},{'i', _print_dec},{'b', _print_bin},{'u', _print_unsigned},{'0', _print_octal},{0, NULL}
 	};
 	int count_char;
 	int specifier_find;

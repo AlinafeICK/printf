@@ -22,5 +22,7 @@ int _print_dec(va_list argument);
 int _character(va_list argument);
 int _modulus(void);
 int _print_bin(va_list argument);
+int _print_unsigned(va_list argument);
+int _print_octal(va_list argument);
 
 #endif /*_MAIN_H_*/
