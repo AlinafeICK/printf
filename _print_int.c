@@ -1,15 +1,14 @@
 #include "main.h"
+#include <stdarg.h>
 
 /**
- * _print_int - function that checks for integers
- * both positive and negative then prints to stdout
- * @n: integer argument
- * Return: Negative or positive integers
+ * _print_Int - function that checks for integers and dec
+ * @argument: the name of the list
+ * Return: the value
  */
-int _print_int(va_list argument)
+int _print_Int(va_list argument)
 {
 	int n = va_arg(argument, int);
-
 	int counter = 0;
 	int num;
 
@@ -20,19 +19,14 @@ int _print_int(va_list argument)
 	}
 	num = 0;
 
-	do
-	{
+	do {
 		num /= 10;
 		counter++;
-	}
-	while (num != 0);
-	do
-	{
+	} while (num != 0);
+	do {
 		num = n % 10;
-		counter += _putchar (num + '0');;
+		counter += _putchar (num + '0');
 		n /= 10;
-	}
-	while (n != 0);
-
+	} while (n != 0);
 	return (counter);
 }
