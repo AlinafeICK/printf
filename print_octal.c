@@ -11,16 +11,21 @@ int _print_octal(va_list argument)
 	int i, count = 0;
 	int *octal_values;
 	
-	if (num / 8 != 0)/*checcks if the value is divided by 8*/
+	if (num == 0)/*checcks if the value is divided by 8*/
 	{
-		num = num / 8;
+		_putchar ('0');
+		return (1);
+	}
+	while (temp != 0)
+	{
+		temp = temp / 8;
 		count++;
 	}
-	count++;
 
 	octal_values = malloc(sizeof(int) * count);/*allocating a memory for the array*/
 	if (octal_values == NULL)
 		return (-1);
+	temp = num;
 	for (i = 0; i < count; i++)/*loop store octal digit in the array*/
 	{
 		octal_values[i] = temp % 8;
