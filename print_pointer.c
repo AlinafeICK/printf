@@ -8,7 +8,7 @@ int _print_pointer(va_list argument)
 {
 	void *p;/*it can take any charcter or integer*/
 	int k;
-	long int a;
+	unsigned long int a;
 
 	p = va_arg(argument, void *);/*will print any character or int*/
 	if (p == NULL)
@@ -18,10 +18,11 @@ int _print_pointer(va_list argument)
 		_putchar ('i');
 		_putchar ('l');
 		_putchar (')');
+		return(5);/*return the length of nil*/
 	}
 	a = (unsigned long int)p;
 	_putchar ('0');
 	_putchar ('x');
 	k = _print_hexa_pointer(a);/*converts a to hexadecimal*/
-	return (k + 2);
+	return (k + 2);/*add 2 "Ox" for the prefix*/
 }
