@@ -7,8 +7,9 @@
 int _print_hexa(unsigned int num)
 {
 	unsigned int temp = num;
-	int i, count = 0;
-	int *Hex_values;
+	int count = 0;
+	int Hex_value;
+	int remainder;
 	
 	if (num == 0)/*checcks if the value is divided by 8*/
 	{
@@ -20,22 +21,16 @@ int _print_hexa(unsigned int num)
 		temp = temp / 16;
 		count++;
 	}
-
-	Hex_values = malloc(sizeof(int) * count);/*allocating a memory for the array*/
-	if (Hex_values == NULL)
-		return (-1);
 	temp = num;
-	for (i = 0; i < count; i++)/*loop store octal digit in the array*/
+	while (temp != 0)
 	{
-		Hex_values[i] = temp % 16;
-		temp = temp / 16;
+		remainder = temp % 16;
+		if (remainder < 10)
+			Hex_value = remainder + '0';
+		else
+			Hex_value = remainder - 10 + 'A';
+		_putchar (Hex_value);
+		temp /= 16;
 	}
-	for (i = count - 1; i >= 0; i--)
-	{
-		if (Hex_values[i] > 0)
-			Hex_values[i] = Hex_values[i] + 7;/*adding 7 to the value*/
-		_putchar (Hex_values[i] + '0');/* 48 to the value to give 65*/
-	}
-	free(Hex_values);
 	return (count);
 }
