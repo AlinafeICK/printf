@@ -21,7 +21,6 @@ int _print_hex(va_list argument)
 		temp = temp / 16;
 		count++;
 	}
-
 	hex_values = malloc(sizeof(int) * count);/*allocating a memory for the array*/
 	if (hex_values == NULL)
 		return (-1);
@@ -33,9 +32,10 @@ int _print_hex(va_list argument)
 	}
 	for (i = count - 1; i >= 0; i--)
 	{
-		if (hex_values[i] > 0)
-			hex_values[i] = hex_values[i] + 39;/*add 39 to ur array value*/
-		_putchar (hex_values[i] + '0');/*add 48 to the value to give 97 which is 'a'*/
+		if (hex_values[i] >= 0)
+			_putchar (hex_values[i] - 10 + 'a');/*a to for lowercase letters*/
+		else
+			_putchar (hex_values[i] + '0');/*handles 0 to 9 digits*/
 	}
 	free(hex_values);
 	return (count);

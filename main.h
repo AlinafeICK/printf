@@ -26,5 +26,7 @@ int _print_unsigned(va_list argument);
 int _print_octal(va_list argument);
 int _print_hex(va_list argument);
 int _print_Hex(va_list argument);
+int _non_print_char(va_list argument);
+int _print_hexa(unsigned int num);
 
 #endif /*_MAIN_H_*/
