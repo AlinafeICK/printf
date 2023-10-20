@@ -28,5 +28,7 @@ int _print_hex(va_list argument);
 int _print_Hex(va_list argument);
 int _non_print_char(va_list argument);
 int _print_hexa(unsigned int num);
+int _print_pointer(va_list argument);
+int _print_hexa_pointer(unsigned long num);
 
 #endif /*_MAIN_H_*/
